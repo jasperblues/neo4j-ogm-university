@@ -31,7 +31,7 @@ Now start your Neo4j server instance, if its not already running.
 Starting the application
 ------------------------
 
-    cd neo4j-examples/ogm-university
+    cd neo4j-examples/neo4j-ogm-university
     mvn spring-boot:run
 
 Authentication
