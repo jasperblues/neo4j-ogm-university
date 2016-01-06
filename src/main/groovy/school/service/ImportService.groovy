@@ -28,7 +28,7 @@ public class ImportService {
     public void reload() {
         Session session = Neo4jSessionFactory.getInstance().getNeo4jSession();
         session.purgeDatabase();
-        session.execute(load("school.cql"));
+        session.query(load("school.cql"), Collections.EMPTY_MAP);
     }
 
     protected static String load(String cqlFile) {

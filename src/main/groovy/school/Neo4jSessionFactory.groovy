@@ -27,6 +27,6 @@ public class Neo4jSessionFactory {
 	}
 
 	public Session getNeo4jSession() {
-		return sessionFactory.openSession("http://localhost:7474");
+		return sessionFactory.openSession();
 	}
 }

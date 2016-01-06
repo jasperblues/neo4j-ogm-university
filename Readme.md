@@ -49,15 +49,7 @@ Starting the application
 Authentication
 --------------
 The application itself does not require any authentication, but if you are running against Neo4j 2.2 or later,
-you'll need to provide connection credentials for the database. Right now, the simplest way to do this is to set
-the Neo4j username and password in build.gradle
-
-```
-   run {
-     systemProperty "username", "neo4j"
-     systemProperty "password", "neopass"
-   }
-```
+you'll need to provide connection credentials for the database. These can be specified in `ogm.properties` 
 
 Loading the initial dataset
 ---------------------------

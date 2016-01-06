@@ -14,9 +14,8 @@ apply plugin: "idea"
 apply plugin: "eclipse"
 
 repositories {
+  mavenLocal()
   jcenter()
-  maven { url "http://repo.spring.io/libs-snapshot" }
-  maven { url "http://m2.neo4j.org/content/repositories/snapshots"}
 }
 
 dependencies {
@@ -30,7 +29,8 @@ dependencies {
 
   compile ratpack.dependency("jackson")
 
-  compile 'org.neo4j:neo4j-ogm:1.1.4'
+  compile 'org.neo4j:neo4j-ogm-api:2.0.0-SNAPSHOT'
+  compile 'org.neo4j:neo4j-ogm-core:2.0.0-SNAPSHOT'
   compile 'com.voodoodyne.jackson.jsog:jackson-jsog:1.1'
 
   testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
