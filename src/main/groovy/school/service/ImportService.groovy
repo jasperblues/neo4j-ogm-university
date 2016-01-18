@@ -25,10 +25,11 @@ import school.domain.*;
 public class ImportService {
 
 
-    public void reload() {
+    public String reload() {
         Session session = Neo4jSessionFactory.getInstance().getNeo4jSession();
         session.purgeDatabase();
         session.query(load("school.cql"), Collections.EMPTY_MAP);
+        return "Data imported!"
     }
 
     protected static String load(String cqlFile) {

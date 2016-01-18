@@ -2,12 +2,12 @@ Hilly Fields Technical College
 ==============================
 ![Logo](https://raw.githubusercontent.com/neo4j-examples/sdn4-university/master/src/main/webapp/assets/images/engineering-dept.JPG)
 
-This project is a demo application for the [Neo4j OGM](https://github.com/neo4j/neo4j-ogm)
+This project is a demo application for the [Neo4j OGM 2.0](https://github.com/neo4j/neo4j-ogm)
 library which provides convenient access to the [Neo4j](http://neo4j.org) graph database.
 
 This tutorial is a fully functioning micro-service based web-application built using the following components
 
-- Neo4j OGM
+- [Neo4j OGM 2.0](http://neo4j.com/docs/ogm/java/2.0.0-SNAPSHOT/)
 - Angular.js
 - Twitter Bootstrap UI
 - Ratpack

@@ -41,15 +41,7 @@ ratpack {
       def theService = getTheService(pathTokens.entity, registry)
       byMethod {
         get {
-          println "****** GET BY ID *********"
-          println "theService = $theService"
-
           def entityInstance = theService.find(Long.parseLong(pathTokens.id))
-          println "entityInstance = $entityInstance"
-
-//          render "ok"
-//          return
-
           render Jackson.json(entityInstance)
         }
         delete {
@@ -150,7 +142,7 @@ ratpack {
       def importService = new school.service.ImportService()
       byMethod {
         get {
-          importService.reload()
+          render importService.reload()
         }
       }
     }

@@ -14,8 +14,10 @@ apply plugin: "idea"
 apply plugin: "eclipse"
 
 repositories {
-  mavenLocal()
   jcenter()
+  maven {
+    url "http://m2.neo4j.org/content/repositories/snapshots"
+  }
 }
 
 dependencies {
@@ -36,7 +38,3 @@ dependencies {
   testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
 }
 
-run {
-  systemProperty "username", "neo4j"
-  systemProperty "password", "neo"
-}

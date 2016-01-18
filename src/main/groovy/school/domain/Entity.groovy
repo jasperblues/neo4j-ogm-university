@@ -26,10 +26,6 @@ public abstract class Entity {
         return id
     }
 
-    public void setId(Long id) {
-        this.id = id
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this.is(o)) return true
