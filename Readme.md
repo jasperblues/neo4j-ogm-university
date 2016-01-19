@@ -15,16 +15,13 @@ This tutorial is a fully functioning micro-service based web-application built u
 The application's domain is a fictitious educational institution - Hilly Fields Technical College - and the application
 allows you to manage the College's Departments, Teaching Staff, Subjects, Students and Classes.
 
-It leverages the power of the new Neo4j Object Graph mapping technology to provide a RESTful interface with which the web client interacts. The application is entirely stateless: every interaction involves a call to a Neo4j server, hopefully demonstrating the speed of the new technology, even over the wire.
+It leverages the power of the new Neo4j Object Graph mapping technology to provide a RESTful interface with which the web client interacts. 
+The application is entirely stateless: every interaction involves a call to a Neo4j database,  demonstrating the speed of the new technology.
 
-WARNING
--------
-By default, the application will attempt to use a Neo4j instance running on the same machine as the application server, and on the standard port 7474. *IT WILL DESTROY ALL THE DATA IN THAT DATABASE AT STARTUP*. So if you don't want that to happen please back up any existing database first.
-
-Start Neo4j
+Configure Embedded Neo4j
 -----------
 
-Now start your Neo4j server instance, if its not already running.
+Set the path to your Neo4j database in `ogm.properties`
 
 **You should back up any data you want to keep because the application will purge any existing data first**
 
@@ -45,11 +42,6 @@ Starting the application
 
     cd neo4j-ogm-university
     gradlew run
-
-Authentication
---------------
-The application itself does not require any authentication, but if you are running against Neo4j 2.2 or later,
-you'll need to provide connection credentials for the database. These can be specified in `ogm.properties` 
 
 Loading the initial dataset
 ---------------------------
