@@ -13,32 +13,33 @@ package school.service;
 
 import org.neo4j.ogm.session.Session;
 import school.Neo4jSessionFactory;
-import school.domain.Entity;
 
 public abstract class GenericService<T> implements Service<T> {
 
     private static final int DEPTH_LIST = 0;
     private static final int DEPTH_ENTITY = 1;
-    private Session session = Neo4jSessionFactory.getInstance().getNeo4jSession();
+    private Neo4jSessionFactory sessionFactory = Neo4jSessionFactory.getInstance();
+
 
     @Override
     public Iterable<T> findAll() {
-        return session.loadAll(getEntityType(), DEPTH_LIST);
+        return sessionFactory.getNeo4jSession().loadAll(getEntityType(), DEPTH_LIST);
     }
 
     @Override
     public T find(Long id) {
-        return session.load(getEntityType(), id, DEPTH_ENTITY);
+        return sessionFactory.getNeo4jSession().load(getEntityType(), id, DEPTH_ENTITY);
     }
 
     @Override
     public void delete(Long id) {
+        Session session = sessionFactory.getNeo4jSession();
         session.delete(session.load(getEntityType(), id));
     }
 
     @Override
     public T createOrUpdate(T entity) {
-        session.save(entity, DEPTH_ENTITY);
+        sessionFactory.getNeo4jSession().save(entity, DEPTH_ENTITY);
         return find(entity.id);
     }
 
